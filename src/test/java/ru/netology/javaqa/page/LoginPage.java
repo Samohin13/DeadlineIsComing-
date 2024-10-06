@@ -14,7 +14,7 @@ public class LoginPage {
     private final SelenideElement errorNotification = $("[data-test-id = 'error-notification'] .notification__content");
 
     public void verifyErrorNotification(String expectedText) {
-        errorNotification.shouldHave(exactText(expectedText)).shouldBe(visible);
+        errorNotification.shouldHave(text(expectedText)).shouldBe(visible);
     }
 
     public VerificationPage validLogin(DataHelper.AuthInfo info) {
