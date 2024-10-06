@@ -18,7 +18,8 @@ public class SQLHelper {
     }
     @SneakyThrows
     public static String getVerificationCode(){
-        var codeSQL ="SELECT code FORM auth_codes ORDER BY created DESC LIMIT 1";
+        // Ошибка понятна FORM, а FROM
+        var codeSQL = "SELECT code FROM auth_codes ORDER BY created DESC LIMIT 1";
         var conn = getConn();
         var code = QUERY_RUNNER.query(conn,codeSQL,new ScalarHandler<String>());
         return code;

@@ -60,6 +60,6 @@ public class LoginTest {
         verificationPage.verifyVerificationPageVisible();
         var verificationCode = DataHelper.generateRandomVerification();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! Неверно указан логин или пароль");
+        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте ещё раз.");
     }
 }
